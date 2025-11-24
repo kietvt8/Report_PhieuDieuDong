@@ -155,6 +155,7 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 	public rpt_PhieuDieuDong()
 	{
 		InitializeComponent();
+		BeforePrint += rpt_PhieuDieuDong_BeforePrint;
 	}
 
 	public ReportResult Generate(DataSet ds, string type)
