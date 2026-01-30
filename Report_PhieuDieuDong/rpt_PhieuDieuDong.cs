@@ -149,14 +149,12 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 	private XRLabel xrLabel26;
 
 	private XRPanel footerPanel;
-	private XRLabel xrLabel28;
 	private GroupFooterBand groupFooterBand1;
 
 	public rpt_PhieuDieuDong()
 	{
 		InitializeComponent();
 		BeforePrint += rpt_PhieuDieuDong_BeforePrint;
-		this.xrLabel28.Text += DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 	}
 
 	public ReportResult Generate(DataSet ds, string type)
@@ -220,7 +218,6 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
 			this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
 			this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-			this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
 			this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
 			this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
 			this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
@@ -386,24 +383,10 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			// 
 			// BottomMargin
 			// 
-			this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel28});
 			this.BottomMargin.HeightF = 26F;
 			this.BottomMargin.Name = "BottomMargin";
 			this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
 			this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-			// 
-			// xrLabel28
-			// 
-			this.xrLabel28.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Italic);
-			this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 0F);
-			this.xrLabel28.Name = "xrLabel28";
-			this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-			this.xrLabel28.SizeF = new System.Drawing.SizeF(430.4375F, 23F);
-			this.xrLabel28.StylePriority.UseFont = false;
-			this.xrLabel28.StylePriority.UseTextAlignment = false;
-			this.xrLabel28.Text = "Ngày giờ in: ";
-			this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
 			// 
 			// ReportHeader
 			// 
