@@ -63,7 +63,10 @@ public class rep_PhieuDD : DataSet
 
 		private DataColumn columnNguoiDuyetDeNghi;
 
-		[DebuggerNonUserCode]
+        private DataColumn columnChiTiet;
+
+
+        [DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		public DataColumn TenCoSoColumn => columnTenCoSo;
 
@@ -127,7 +130,11 @@ public class rep_PhieuDD : DataSet
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		public DataColumn NguoiDuyetDeNghiColumn => columnNguoiDuyetDeNghi;
 
-		[DebuggerNonUserCode]
+        [DebuggerNonUserCode]
+        [GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public DataColumn ChiTietColumn => columnChiTiet;
+
+        [DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[Browsable(false)]
 		public int Count => base.Rows.Count;
@@ -196,13 +203,13 @@ public class rep_PhieuDD : DataSet
 
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[DebuggerNonUserCode]
-		public DataTable1Row AddDataTable1Row(string TenCoSo, string DiaChi, string Logo, string SoPhieuDieuDong, string HoTenVanChuyen, string HangVanChuyen, string PhuongTienVanChuyen, string ThoiGianVanChuyen, string XuatHangTaiKho, string NhanHangTaiKho, string NgayDieuDong, string GDCungUng, string NguoiDeNghi, string SoHD, string TongCong, string NguoiDuyetDeNghi)
+		public DataTable1Row AddDataTable1Row(string TenCoSo, string DiaChi, string Logo, string SoPhieuDieuDong, string HoTenVanChuyen, string HangVanChuyen, string PhuongTienVanChuyen, string ThoiGianVanChuyen, string XuatHangTaiKho, string NhanHangTaiKho, string NgayDieuDong, string GDCungUng, string NguoiDeNghi, string SoHD, string TongCong, string NguoiDuyetDeNghi, string ChiTiet)
 		{
 			DataTable1Row dataTable1Row = (DataTable1Row)NewRow();
-			object[] itemArray = new object[16]
+			object[] itemArray = new object[17]
 			{
 				TenCoSo, DiaChi, Logo, SoPhieuDieuDong, HoTenVanChuyen, HangVanChuyen, PhuongTienVanChuyen, ThoiGianVanChuyen, XuatHangTaiKho, NhanHangTaiKho,
-				NgayDieuDong, GDCungUng, NguoiDeNghi, SoHD, TongCong, NguoiDuyetDeNghi
+				NgayDieuDong, GDCungUng, NguoiDeNghi, SoHD, TongCong, NguoiDuyetDeNghi, ChiTiet
 			};
 			dataTable1Row.ItemArray = itemArray;
 			base.Rows.Add(dataTable1Row);
@@ -245,9 +252,10 @@ public class rep_PhieuDD : DataSet
 			columnSoHD = base.Columns["SoHD"];
 			columnTongCong = base.Columns["TongCong"];
 			columnNguoiDuyetDeNghi = base.Columns["columnNguoiDuyetDeNghi"];
-		}
+            columnChiTiet = base.Columns["columnChiTiet"];
+        }
 
-		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[DebuggerNonUserCode]
 		private void InitClass()
 		{
@@ -283,7 +291,9 @@ public class rep_PhieuDD : DataSet
 			base.Columns.Add(columnTongCong);
 			columnNguoiDuyetDeNghi = new DataColumn("NguoiDuyetDeNghi", typeof(string), null, MappingType.Element);
 			base.Columns.Add(columnNguoiDuyetDeNghi);
-		}
+            columnChiTiet = new DataColumn("ChiTiet", typeof(string), null, MappingType.Element);
+            base.Columns.Add(columnChiTiet);
+        }
 
 		[DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
