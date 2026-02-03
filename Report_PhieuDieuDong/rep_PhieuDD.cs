@@ -65,6 +65,10 @@ public class rep_PhieuDD : DataSet
 
         private DataColumn columnChiTiet;
 
+        private DataColumn columnChuKyNguoiDeNghi;
+
+        private DataColumn columnChuKyNguoiDuyetDeNghi;
+
 
         [DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -135,6 +139,14 @@ public class rep_PhieuDD : DataSet
         public DataColumn ChiTietColumn => columnChiTiet;
 
         [DebuggerNonUserCode]
+        [GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public DataColumn ChuKyNguoiDeNghiColumn => columnChuKyNguoiDeNghi;
+
+        [DebuggerNonUserCode]
+        [GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public DataColumn ChuKyNguoiDuyetDeNghiColumn => columnChuKyNguoiDuyetDeNghi;
+
+        [DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[Browsable(false)]
 		public int Count => base.Rows.Count;
@@ -203,13 +215,13 @@ public class rep_PhieuDD : DataSet
 
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[DebuggerNonUserCode]
-		public DataTable1Row AddDataTable1Row(string TenCoSo, string DiaChi, string Logo, string SoPhieuDieuDong, string HoTenVanChuyen, string HangVanChuyen, string PhuongTienVanChuyen, string ThoiGianVanChuyen, string XuatHangTaiKho, string NhanHangTaiKho, string NgayDieuDong, string GDCungUng, string NguoiDeNghi, string SoHD, string TongCong, string NguoiDuyetDeNghi, string ChiTiet)
+		public DataTable1Row AddDataTable1Row(string TenCoSo, string DiaChi, string Logo, string SoPhieuDieuDong, string HoTenVanChuyen, string HangVanChuyen, string PhuongTienVanChuyen, string ThoiGianVanChuyen, string XuatHangTaiKho, string NhanHangTaiKho, string NgayDieuDong, string GDCungUng, string NguoiDeNghi, string SoHD, string TongCong, string NguoiDuyetDeNghi, string ChiTiet, byte[] ChuKyNguoiDeNghi, byte[] ChuKyNguoiDuyetDeNghi)
 		{
 			DataTable1Row dataTable1Row = (DataTable1Row)NewRow();
-			object[] itemArray = new object[17]
+			object[] itemArray = new object[19]
 			{
 				TenCoSo, DiaChi, Logo, SoPhieuDieuDong, HoTenVanChuyen, HangVanChuyen, PhuongTienVanChuyen, ThoiGianVanChuyen, XuatHangTaiKho, NhanHangTaiKho,
-				NgayDieuDong, GDCungUng, NguoiDeNghi, SoHD, TongCong, NguoiDuyetDeNghi, ChiTiet
+				NgayDieuDong, GDCungUng, NguoiDeNghi, SoHD, TongCong, NguoiDuyetDeNghi, ChiTiet, ChuKyNguoiDeNghi, ChuKyNguoiDuyetDeNghi
 			};
 			dataTable1Row.ItemArray = itemArray;
 			base.Rows.Add(dataTable1Row);
@@ -253,6 +265,8 @@ public class rep_PhieuDD : DataSet
 			columnTongCong = base.Columns["TongCong"];
 			columnNguoiDuyetDeNghi = base.Columns["columnNguoiDuyetDeNghi"];
             columnChiTiet = base.Columns["columnChiTiet"];
+            columnChuKyNguoiDeNghi = base.Columns["ChuKyNguoiDeNghi"];
+            columnChuKyNguoiDuyetDeNghi = base.Columns["ChuKyNguoiDuyetDeNghi"];
         }
 
         [GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -293,6 +307,10 @@ public class rep_PhieuDD : DataSet
 			base.Columns.Add(columnNguoiDuyetDeNghi);
             columnChiTiet = new DataColumn("ChiTiet", typeof(string), null, MappingType.Element);
             base.Columns.Add(columnChiTiet);
+            columnChuKyNguoiDeNghi = new DataColumn("ChuKyNguoiDeNghi", typeof(string), null, MappingType.Element);
+            base.Columns.Add(columnChuKyNguoiDeNghi);
+            columnChuKyNguoiDuyetDeNghi = new DataColumn("ChuKyNguoiDuyetDeNghi", typeof(string), null, MappingType.Element);
+            base.Columns.Add(columnChuKyNguoiDuyetDeNghi);
         }
 
 		[DebuggerNonUserCode]
@@ -1290,6 +1308,76 @@ public class rep_PhieuDD : DataSet
 		public void SetTongCongNull()
 		{
 			base[tableDataTable1.TongCongColumn] = Convert.DBNull;
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public byte[] ChuKyNguoiDeNghi
+		{
+			get
+			{
+				try
+				{
+					return (byte[])base[tableDataTable1.ChuKyNguoiDeNghiColumn];
+				}
+				catch (InvalidCastException innerException)
+				{
+					throw new StrongTypingException("The value for column 'ChuKyNguoiDeNghi' in table 'DataTable1' is DBNull.", innerException);
+				}
+			}
+			set
+			{
+				base[tableDataTable1.ChuKyNguoiDeNghiColumn] = value;
+			}
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public byte[] ChuKyNguoiDuyetDeNghi
+		{
+			get
+			{
+				try
+				{
+					return (byte[])base[tableDataTable1.ChuKyNguoiDuyetDeNghiColumn];
+				}
+				catch (InvalidCastException innerException)
+				{
+					throw new StrongTypingException("The value for column 'ChuKyNguoiDuyetDeNghi' in table 'DataTable1' is DBNull.", innerException);
+				}
+			}
+			set
+			{
+				base[tableDataTable1.ChuKyNguoiDuyetDeNghiColumn] = value;
+			}
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public bool IsChuKyNguoiDeNghiNull()
+		{
+			return IsNull(tableDataTable1.ChuKyNguoiDeNghiColumn);
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public void SetChuKyNguoiDeNghiNull()
+		{
+			base[tableDataTable1.ChuKyNguoiDeNghiColumn] = Convert.DBNull;
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public bool IsChuKyNguoiDuyetDeNghiNull()
+		{
+			return IsNull(tableDataTable1.ChuKyNguoiDuyetDeNghiColumn);
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public void SetChuKyNguoiDuyetDeNghiNull()
+		{
+			base[tableDataTable1.ChuKyNguoiDuyetDeNghiColumn] = Convert.DBNull;
 		}
 	}
 
