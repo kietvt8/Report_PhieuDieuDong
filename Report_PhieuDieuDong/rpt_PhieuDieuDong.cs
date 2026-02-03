@@ -286,6 +286,8 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
 			this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
 			this.footerPanel = new DevExpress.XtraReports.UI.XRPanel();
+			this.xrPictureBoxNguoiDeNghi = new DevExpress.XtraReports.UI.XRPictureBox();
+			this.xrPictureBoxDuyetDeNghi = new DevExpress.XtraReports.UI.XRPictureBox();
 			this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
 			this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
 			this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
@@ -306,8 +308,6 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
 			this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
 			this.groupFooterBand1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-			this.xrPictureBoxDuyetDeNghi = new DevExpress.XtraReports.UI.XRPictureBox();
-			this.xrPictureBoxNguoiDeNghi = new DevExpress.XtraReports.UI.XRPictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -820,6 +820,20 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			this.footerPanel.Name = "footerPanel";
 			this.footerPanel.SizeF = new System.Drawing.SizeF(1142F, 208.3333F);
 			// 
+			// xrPictureBoxNguoiDeNghi
+			// 
+			this.xrPictureBoxNguoiDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(889.7604F, 95.33329F);
+			this.xrPictureBoxNguoiDeNghi.Name = "xrPictureBoxNguoiDeNghi";
+			this.xrPictureBoxNguoiDeNghi.SizeF = new System.Drawing.SizeF(187.27F, 89.99999F);
+			this.xrPictureBoxNguoiDeNghi.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+			// 
+			// xrPictureBoxDuyetDeNghi
+			// 
+			this.xrPictureBoxDuyetDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(462.9684F, 95.33329F);
+			this.xrPictureBoxDuyetDeNghi.Name = "xrPictureBoxDuyetDeNghi";
+			this.xrPictureBoxDuyetDeNghi.SizeF = new System.Drawing.SizeF(187.2711F, 89.99999F);
+			this.xrPictureBoxDuyetDeNghi.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+			// 
 			// xrLabel18
 			// 
 			this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
@@ -1034,20 +1048,6 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
             this.xrTable3});
 			this.groupFooterBand1.HeightF = 26.04167F;
 			this.groupFooterBand1.Name = "groupFooterBand1";
-			// 
-			// xrPictureBoxDuyetDeNghi
-			// 
-			this.xrPictureBoxDuyetDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(421.3018F, 95.33329F);
-			this.xrPictureBoxDuyetDeNghi.Name = "xrPictureBoxDuyetDeNghi";
-			this.xrPictureBoxDuyetDeNghi.SizeF = new System.Drawing.SizeF(268.5211F, 89.99999F);
-			this.xrPictureBoxDuyetDeNghi.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-			// 
-			// xrPictureBoxNguoiDeNghi
-			// 
-			this.xrPictureBoxNguoiDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(850.1765F, 95.33329F);
-			this.xrPictureBoxNguoiDeNghi.Name = "xrPictureBoxNguoiDeNghi";
-			this.xrPictureBoxNguoiDeNghi.SizeF = new System.Drawing.SizeF(268.1986F, 89.99999F);
-			this.xrPictureBoxNguoiDeNghi.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
 			// 
 			// rpt_PhieuDieuDong
 			// 
