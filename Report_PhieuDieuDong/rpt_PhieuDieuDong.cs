@@ -208,7 +208,7 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			byte[] bufferNguoiDeNghi = Convert.FromBase64String(chuKyNguoiDeNghi);
 			Stream streamNguoiDeNghi = new MemoryStream(bufferNguoiDeNghi);
 			Image imageNguoiDeNghi = Image.FromStream(streamNguoiDeNghi);
-			xrPictureBoxNguoiDeNghi.Image = imageNguoiDeNghi;
+			xrPictureBoxNguoiDeNghi.Image = ConvertToWhiteBackground(imageNguoiDeNghi);
 		}
 		
 		// ChuKyNguoiDuyetDeNghi
@@ -222,8 +222,19 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			byte[] bufferDuyetDeNghi = Convert.FromBase64String(chuKyNguoiDuyetDeNghi);
 			Stream streamDuyetDeNghi = new MemoryStream(bufferDuyetDeNghi);
 			Image imageDuyetDeNghi = Image.FromStream(streamDuyetDeNghi);
-			xrPictureBoxDuyetDeNghi.Image = imageDuyetDeNghi;
+			xrPictureBoxDuyetDeNghi.Image = ConvertToWhiteBackground(imageDuyetDeNghi);
 		}
+	}
+	
+	private Image ConvertToWhiteBackground(Image original)
+	{
+		Bitmap result = new Bitmap(original.Width, original.Height);
+		using (Graphics g = Graphics.FromImage(result))
+		{
+			g.Clear(Color.White);
+			g.DrawImage(original, 0, 0, original.Width, original.Height);
+		}
+		return result;
 	}
 
 	protected override void Dispose(bool disposing)
@@ -409,7 +420,10 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			// 
 			// xrTableCell16
 			// 
+			this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Note]")});
 			this.xrTableCell16.Name = "xrTableCell16";
+			this.xrTableCell16.Text = "xrTableCell16";
 			this.xrTableCell16.Weight = 0.6497989480577242D;
 			// 
 			// TopMargin
@@ -790,11 +804,12 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			this.xrLabel6.StylePriority.UseTextAlignment = false;
 			this.xrLabel6.Text = "LỆNH ĐIỀU ĐỘNG";
 			this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-			// 
 			// ReportFooter
 			// 
 			this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.footerPanel});
+            this.footerPanel,
+            this.xrPictureBoxNguoiDeNghi,
+            this.xrPictureBoxDuyetDeNghi});
 			this.ReportFooter.HeightF = 208.3333F;
 			this.ReportFooter.Name = "ReportFooter";
 			this.ReportFooter.StylePriority.UseTextAlignment = false;
@@ -803,10 +818,9 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			// footerPanel
 			// 
 			this.footerPanel.Borders = DevExpress.XtraPrinting.BorderSide.None;
+			this.footerPanel.BorderWidth = 0F;
 			this.footerPanel.CanGrow = false;
 			this.footerPanel.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPictureBoxNguoiDeNghi,
-            this.xrPictureBoxDuyetDeNghi,
             this.xrLabel18,
             this.xrLabel21,
             this.xrLabel20,
@@ -819,19 +833,19 @@ public class rpt_PhieuDieuDong : XtraReport, IReport
 			this.footerPanel.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
 			this.footerPanel.Name = "footerPanel";
 			this.footerPanel.SizeF = new System.Drawing.SizeF(1142F, 208.3333F);
-			// 
+			this.footerPanel.StylePriority.UseBorders = false;
+			this.footerPanel.StylePriority.UseBorderWidth = false;
 			// xrPictureBoxNguoiDeNghi
 			// 
-			this.xrPictureBoxNguoiDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(889.7604F, 95.33329F);
+			this.xrPictureBoxNguoiDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(879.18F, 95.33329F);
 			this.xrPictureBoxNguoiDeNghi.Name = "xrPictureBoxNguoiDeNghi";
-			this.xrPictureBoxNguoiDeNghi.SizeF = new System.Drawing.SizeF(187.27F, 89.99999F);
+			this.xrPictureBoxNguoiDeNghi.SizeF = new System.Drawing.SizeF(210.1868F, 89.99999F);
 			this.xrPictureBoxNguoiDeNghi.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-			// 
 			// xrPictureBoxDuyetDeNghi
 			// 
-			this.xrPictureBoxDuyetDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(462.9684F, 95.33329F);
+			this.xrPictureBoxDuyetDeNghi.LocationFloat = new DevExpress.Utils.PointFloat(450.3F, 95.33329F);
 			this.xrPictureBoxDuyetDeNghi.Name = "xrPictureBoxDuyetDeNghi";
-			this.xrPictureBoxDuyetDeNghi.SizeF = new System.Drawing.SizeF(187.2711F, 89.99999F);
+			this.xrPictureBoxDuyetDeNghi.SizeF = new System.Drawing.SizeF(210.1878F, 89.99999F);
 			this.xrPictureBoxDuyetDeNghi.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
 			// 
 			// xrLabel18

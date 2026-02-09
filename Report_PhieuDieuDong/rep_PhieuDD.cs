@@ -472,6 +472,8 @@ public class rep_PhieuDD : DataSet
 
 		private DataColumn columnQuyCach;
 
+		private DataColumn columnNote;
+
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[DebuggerNonUserCode]
 		public DataColumn STTColumn => columnSTT;
@@ -503,6 +505,10 @@ public class rep_PhieuDD : DataSet
 		[DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		public DataColumn QuyCachColumn => columnQuyCach;
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public DataColumn NoteColumn => columnNote;
 
 		[Browsable(false)]
 		[DebuggerNonUserCode]
@@ -573,10 +579,10 @@ public class rep_PhieuDD : DataSet
 
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		[DebuggerNonUserCode]
-		public DataTable2Row AddDataTable2Row(string STT, string MaHang, string MatHang, string DVT, string SL, string LoSX, string HanDung, string QuyCach)
+		public DataTable2Row AddDataTable2Row(string STT, string MaHang, string MatHang, string DVT, string SL, string LoSX, string HanDung, string QuyCach, string Note)
 		{
 			DataTable2Row dataTable2Row = (DataTable2Row)NewRow();
-			object[] itemArray = new object[8] { STT, MaHang, MatHang, DVT, SL, LoSX, HanDung, QuyCach };
+			object[] itemArray = new object[9] { STT, MaHang, MatHang, DVT, SL, LoSX, HanDung, QuyCach, Note };
 			dataTable2Row.ItemArray = itemArray;
 			base.Rows.Add(dataTable2Row);
 			return dataTable2Row;
@@ -610,6 +616,7 @@ public class rep_PhieuDD : DataSet
 			columnLoSX = base.Columns["LoSX"];
 			columnHanDung = base.Columns["HanDung"];
 			columnQuyCach = base.Columns["QuyCach"];
+			columnNote = base.Columns["Note"];
 		}
 
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -632,6 +639,8 @@ public class rep_PhieuDD : DataSet
 			base.Columns.Add(columnHanDung);
 			columnQuyCach = new DataColumn("QuyCach", typeof(string), null, MappingType.Element);
 			base.Columns.Add(columnQuyCach);
+			columnNote = new DataColumn("Note", typeof(string), null, MappingType.Element);
+			base.Columns.Add(columnNote);
 		}
 
 		[DebuggerNonUserCode]
@@ -1555,6 +1564,27 @@ public class rep_PhieuDD : DataSet
 
 		[DebuggerNonUserCode]
 		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public string Note
+		{
+			get
+			{
+				try
+				{
+					return (string)base[tableDataTable2.NoteColumn];
+				}
+				catch (InvalidCastException innerException)
+				{
+					throw new StrongTypingException("The value for column 'Note' in table 'DataTable2' is DBNull.", innerException);
+				}
+			}
+			set
+			{
+				base[tableDataTable2.NoteColumn] = value;
+			}
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
 		internal DataTable2Row(DataRowBuilder rb)
 			: base(rb)
 		{
@@ -1671,6 +1701,20 @@ public class rep_PhieuDD : DataSet
 		public void SetQuyCachNull()
 		{
 			base[tableDataTable2.QuyCachColumn] = Convert.DBNull;
+		}
+
+		[DebuggerNonUserCode]
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		public bool IsNoteNull()
+		{
+			return IsNull(tableDataTable2.NoteColumn);
+		}
+
+		[GeneratedCode("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+		[DebuggerNonUserCode]
+		public void SetNoteNull()
+		{
+			base[tableDataTable2.NoteColumn] = Convert.DBNull;
 		}
 	}
 
